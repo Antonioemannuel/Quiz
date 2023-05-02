@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="style.css">  
+
+</head>
+<body>
+  <div id="header">
+    <img src="logo_if.png" alt="logo_if" width="100" height="" id="img">
+  </div>
+  <h2>BEM VINDO AO</h2>
+  <h2>QUIZ APP</h2>
+  <n></n>
+  <n></n>
+  <n></n>
+  <n></n>
+  <main>
+    <div class="content">
+      <p>Para iniciar o quiz informe o seu nome:</p>
+      <n></n>
+      <input class="form-control" id="form" value=""  type="text" placeholder="" aria-label="default input example" cols="2">
+      <n></n>
+      <button type="button" class="btn btn-primary" style="width: 30%; margin-left: 35%; 
+            text-align: center; padding: 8px; border: solid 1px; border-radius: 5px; cursor: pointer;"
+            > Iniciar 
+      </button>
+      
+    </div>
+  </main>
+  
+  <!-- modal element -->
+  <div id="modal">
+
+    <div id="header">
+      <img src="logo_if.png" alt="logo_if" width="100" height="" id="img">
+    </div>
+  <h1 class="modal-title">
+      QUIZ APP
+  </h1>
+  <div class="container">
+      <rodape class="Rodape">
+          <p>
+             &copy; Desenvolvido em 2023 / ian.amorim@aluno.ifsertao-pe.edu.br / bernard.nogueira@aluno.ifsertao-pe.edu.br / pedro.coelho@aluno.ifsertao-pe.edu.br
+          </p>
+      </rodape>
+
+  <script src="script.js" type="module"></script>
+  <script>
+    const input = document.querySelector(".form-control");
+    const button = document.querySelector(".btn");
+    const modal = document.getElementById("modal");
+
+    button.addEventListener("click", handleInput);
+
+    function handleInput(event){
+      
+      localStorage.setItem("input", input.value);
+
+      window.location.href='quiz.html';
+    }
+
+    // show the modal when the page loads
+    window.onload = function() {
+      setTimeout(function() {
+        modal.classList.add("show");
+        setTimeout(function() {
+          modal.classList.remove("show");
+        }, 5000);
+      }, 0);
+    }
+  </script>
+</body>
+</html>
