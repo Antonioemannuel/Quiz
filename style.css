@@ -39,8 +39,8 @@ main {
   border: solid 3px;
   box-shadow: 10px 20px white;
   width: 100%;
-  max-width: 400px;
-  min-height: 200px;
+  max-width: 470px;
+  min-height: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,7 +121,7 @@ button {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 #modal.show {
@@ -147,7 +147,7 @@ button {
 }
 
 .modal-title {
-  border: 2px solid yellow;
+  border: 3px solid yellow;
   border-radius: 10px;
   padding: 50px;
 }
