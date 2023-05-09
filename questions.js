@@ -11,12 +11,12 @@ export default [
       ],
     },
     {
-      question: "Qual é a função do kernel de um sistema operacional?",
+      question: "Qual é a função do gerenciador de dispositivos de um sistema operacional?",
       answers: [
-        { option: "Gerenciar os dispositivos de entrada e saída", correct: false },
+        { option: "Gerenciar os dispositivos externos", correct: true },
         { option: "Controlar o acesso à rede", correct: false },
         { option: " Realizar operações de segurança ", correct: false },
-        { option: " Gerenciar os recursos do hardware ", correct: true },
+        { option: " Gerenciar os recursos do hardware ", correct: false },
       ],
     },
     {
@@ -56,21 +56,21 @@ export default [
       ],
     },
     {
-      question: "O que é um sistema de arquivos em um sistema operacional?",
+      question: "Qual dos SO´s é “melhor visto” comercialmente?",
       answers: [
-        { option: "Um sistema para gerenciar arquivos em rede ", correct: false },
-        { option: "Um sistema para comprimir arquivos", correct: false },
-        { option: "Um sistema para organizar e armazenar arquivos em um dispositivo de armazenamento ", correct: true },
-        { option: "Um sistema para converter arquivos entre diferentes formatos", correct: false },
+        { option: "Linux ", correct: false },
+        { option: "Windows", correct: true },
+        { option: "Mac OS", correct: false },
+        { option: "Nehuma das alternativas", correct: false },
       ],
     },
     {
-      question: "O que é um driver em um sistema operacional?",
+      question: "Qual o caso mais comum de se usar um computador sem SO?",
       answers: [
         { option: "Um programa para gerenciar as atualizações do sistema", correct: false },
-        { option: "Um programa para gerenciar a segurança do sistema", correct: false },
-        { option: "Um programa para gerenciar os dispositivos de hardware", correct: true },
-        { option: "Um programa para gerenciar as configurações do sistema", correct: false },
+        { option: "Acessar a BIOS para, talvez, selecionar o tipo de BOOT", correct: true },
+        { option: "Visualização de fotos", correct: false },
+        { option: "Ligar o computador", correct: false },
       ],
     },
 ];

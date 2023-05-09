@@ -71,7 +71,6 @@ function finish() {
 }
 
 
-
 function loadQuestion() {
   if(level == 1) {
     options = questionnivel2;
