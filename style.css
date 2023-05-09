@@ -63,7 +63,7 @@ main {
   gap: 5px;
 }
 
-button {
+button, .sair {
   width: 100%;
   text-align: start;
   padding: 5px;
@@ -71,8 +71,43 @@ button {
   border-color: black;
   border-radius: 5px;
   cursor: pointer;
+  background-color: rgb(44, 0, 165);
+  color: white;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+button:focus {
   background-color: yellow;
   color: black;
+}
+
+button:hover, .sair:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.button, .sair{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+a{
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn{
+  text-align: center;
+  max-width: 30%;
 }
 
 .finish {
@@ -151,5 +186,8 @@ button {
   border-radius: 10px;
   padding: 50px;
 }
+
+
+
 
 

@@ -6,11 +6,16 @@ const content = document.querySelector(".content");
 const contentFinish = document.querySelector(".finish");
 const btnRestart = document.querySelector(".finish button");
 const name = document.querySelector(".name");
+const button = document.querySelector(".button");
 
+
+import questionnivel2 from "./questionnivel2.js";
 import questions from "./questions.js";
 
 let currentIndex = 0;
 let questionsCorrect = 0;
+let level = 0;
+let options = questions;
 
 btnRestart.onclick = () => {
   content.style.display = "flex";
@@ -22,11 +27,9 @@ btnRestart.onclick = () => {
 };
 
 function nextQuestion(e) {
-  if (e.target.getAttribute("data-correct") === "true") {
-    questionsCorrect++;
-  }
+  
 
-  if (currentIndex < questions.length - 1) {
+  if (currentIndex < options.length - 1) {
     currentIndex++;
     loadQuestion();
   } else {
@@ -34,17 +37,51 @@ function nextQuestion(e) {
   }
 }
 
-function finish() {
-  textFinish.innerHTML = `você acertou ${questionsCorrect} de ${questions.length}`;
-  content.style.display = "none";
-  contentFinish.style.display = "flex";
+const btnNextLevel = document.querySelector(".next-level");
+btnNextLevel.addEventListener("click", nextLevel);
+
+
+
+function nextLevel() {
+  // Aqui você pode adicionar a lógica para ir para o próximo nível
+  // Exemplo: redirecionar para uma nova página ou carregar novas questões
+  level = level + 1;
+
+  content.style.display = "flex";
+  contentFinish.style.display = "none";
+
+  btnNextLevel.style.display = "none";
+
+  currentIndex = 0;
+  questionsCorrect = 0;
+  loadQuestion();
 }
 
+function finish() {
+  textFinish.innerHTML = `você acertou ${questionsCorrect} de ${options.length}`;
+  content.style.display = "none";
+  contentFinish.style.display = "flex";
+
+  if (questionsCorrect >= 3 && level == 0) {
+    btnNextLevel.style.display = "block";
+  
+  } else {
+    
+  }
+}
+
+
+
 function loadQuestion() {
-  spnQtd.innerHTML = `${currentIndex + 1}/${questions.length}`;
-  const item = questions[currentIndex];
+  if(level == 1) {
+    options = questionnivel2;
+  }
+  spnQtd.innerHTML = `${currentIndex + 1}/${options.length}`;
+
+  const item = options[currentIndex];
   answers.innerHTML = "";
   question.innerHTML = item.question;
+  button.innerHTML = "<button disabled class='btn' >Proximo</button>";
 
   item.answers.forEach((answer) => {
     const div = document.createElement("div");
@@ -59,11 +96,24 @@ function loadQuestion() {
   });
 
   document.querySelectorAll(".answer").forEach((item) => {
-    item.addEventListener("click", nextQuestion);
+    item.addEventListener("focus", handleButton);
   });
+
 }
 
 loadQuestion();
+
+function handleButton(e){
+  
+  const btn = document.querySelector(".btn");
+  btn.removeAttribute("disabled");
+
+  if (e.target.getAttribute("data-correct") === "true") {
+    questionsCorrect++;
+  }
+  
+}
+button.addEventListener("click", nextQuestion);
 
 function handleName(){
 
