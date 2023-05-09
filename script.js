@@ -62,7 +62,7 @@ function finish() {
   content.style.display = "none";
   contentFinish.style.display = "flex";
 
-  if (questionsCorrect >= 3 && level == 0) {
+  if (questionsCorrect >= 5 && level == 0) {
     btnNextLevel.style.display = "block";
   
   } else {
